@@ -45,4 +45,4 @@ Su tarea es auditar y refactorizar el código fuente proporcionado para que sea 
   - Las observaciones, en formato markdown y en la carpeta `/entregas/apellidoNombre/documentos`
 - El desarollo debe realizarse mediante babySteps (un ajuste pequeño a la vez, commit por ajuste).
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
