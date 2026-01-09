@@ -44,16 +44,16 @@ class AnalizadorTexto {
         System.out.println("Espacios: " + espacios);
         System.out.println("Otros: " + otros);
 
-        if (vocales > consonantes && consonantes > 0 && texto.length() > 20 && espacios >= 2 && numeros == 0) {
-        System.out.println("Categoría: Texto literario con alta densidad vocálica");
-
-        } else if (consonantes > vocales && vocales > 0 && texto.length() > 15 && (otros >= 3 || numeros >= 2) && espacios >= 1) {
-        System.out.println("Categoría: Texto técnico o científico");
-
-        } else if (numeros > 5 && (vocales + consonantes) < texto.length() / 2 && espacios < texto.length() / 10 && otros >= 2) {
+        if (numeros > 5 && otros >= 2 && espacios < longitudTexto / 10) {
         System.out.println("Categoría: Código o expresión matemática");
 
-        } else if (espacios > texto.length() / 5 && vocales > 0 && consonantes > 0 && numeros < 3 && otros < vocales / 2) {
+        } else if (vocales > consonantes && espacios >= 2 && numeros == 0) {
+        System.out.println("Categoría: Texto literario con alta densidad vocálica");
+
+        } else if (consonantes > vocales && (otros >= 3 || numeros >= 2)) {
+        System.out.println("Categoría: Texto técnico o científico");
+
+        } else if (espacios > longitudTexto / 5) {
         System.out.println("Categoría: Texto informal o conversacional");
 
         } else {
