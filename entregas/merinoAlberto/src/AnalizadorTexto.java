@@ -70,15 +70,20 @@ class AnalizadorTexto {
 
         boolean tieneMayuscula = false;
         boolean tieneMinuscula = false;
+
         for (int i = 0; i < texto.length(); i++) {
             char c = texto.charAt(i);
+
             if (c >= 'A' && c <= 'Z') {
                 tieneMayuscula = true;
-            }
-            if (c >= 'a' && c <= 'z') {
+            } else if (c >= 'a' && c <= 'z') {
                 tieneMinuscula = true;
             }
+            if (tieneMayuscula && tieneMinuscula) {
+            break;
+            }
         }
+
 
         if (tieneMayuscula && tieneMinuscula && texto.charAt(0) >= 'A' && texto.charAt(0) <= 'Z' && (texto.charAt(texto.length() - 1) == '.' || texto.charAt(texto.length() - 1) == '!' || texto.charAt(texto.length() - 1) == '?') && espacios > 0) {
             System.out.println("Formato: Oración bien formada");
