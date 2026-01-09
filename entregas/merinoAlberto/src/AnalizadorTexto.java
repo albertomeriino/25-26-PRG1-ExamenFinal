@@ -20,21 +20,24 @@ class AnalizadorTexto {
 
         for (int i = 0; i < texto.length(); i++) {
             char c = texto.charAt(i);
-            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
-                    c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
-                    vocales++;
-                } else {
-                    consonantes++;
-                }
-            } else if (c >= '0' && c <= '9') {
-                numeros++;
-            } else if (c == ' ') {
-                espacios++;
-            } else {
-                otros++;
-            }
+
+            if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+
+             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+                || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            vocales++;
+        } else {
+            consonantes++;
         }
+
+        } else if (c >= '0' && c <= '9') {
+            numeros++;
+        } else if (c == ' ') {
+            espacios++;
+        } else {
+            otros++;
+        }
+    }
 
         System.out.println("ESTADÍSTICAS BÁSICAS");
         System.out.println("Longitud: " + texto.length());
